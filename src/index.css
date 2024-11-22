@@ -1,13 +1,305 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --orange: #ff6c31;
+  --grey: #667085;
+  --green: #38bf08;
+  --lightOrange: #ffead2;
+  --lightGrey: #ebe7e7;
+  --mediumOrange: #ff8c59;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+button:focus {
+  outline: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  padding: 1em 3em;
+  border-bottom: 1px solid var(--lightGrey);
+  gap: 2em;
+}
+.navbarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.navbarContent ul {
+  list-style-type: none;
+  display: flex;
+}
+.navbarContent li {
+  margin-right: 20px;
+  color: var(--grey);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+.navbarContent .buttons .login {
+  background-color: #fff;
+  margin-right: 20px;
+  color: var(--grey);
+  font-size: 16px;
+  font-weight: 600;
+}
+.navbarContent .buttons .signup {
+  background-color: var(--orange);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* Home */
+.home {
+  padding: 1em 3em;
+}
+.home .myBookings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .myBookings h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.home .myBookings button {
+  padding: 10px;
+}
+.home .myBookings .upcoming {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #fff;
+  border: 1px solid var(--lightGrey);
+}
+.home .myBookings .history {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid var(--lightGrey);
+  background-color: var(--orange);
+  color: #fff;
+}
+/* Filter Section */
+.filter-section {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filter-section button {
+  background: var(--lightOrange);
+  color: #333;
+}
+
+.filter-section button.active {
+  background: #ff6b6b;
+  color: white;
+}
+/* Booking Card */
+.bookings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.booking-card {
+  border: 1px solid var(--lightGrey);
+  border-radius: 10px;
+  padding: 7px 12px;
+}
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+.booking-header p {
+  font-size: 0.6rem;
+}
+.booking-card .status {
+  background-color: var(--green);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 76px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+.booking-card .top {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--lightGrey);
+}
+.booking-card .top h4,
+.booking-card .top p {
+  margin-bottom: 0.5rem;
+}
+.booking-content p {
+  color: var(--grey);
+  font-size: 0.7rem;
+}
+.booking-content .bottom {
+  margin-top: 0.5rem;
+}
+.booking-content .child1 {
+  margin-bottom: 0.5rem;
+}
+.booking-content .child2 button {
+  background-color: var(--mediumOrange);
+  border-radius: 20px;
+  padding: 5px 8px;
+  margin-right: 0.5em;
+  font-size: 0.6rem;
+  color: #fff;
+}
+.booking-content .child3 {
+  margin-top: 0.3rem;
+}
+.booking-content .bottom .amount {
+  color: var(--orange);
+  font-weight: 700;
+}
+.booking-content .bottom .type {
+  color: #000;
+  font-weight: 700;
+}
+.booking-content .bottom .note {
+  color: #000;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.card-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 15px 5em 0 5em;
+}
+.card-actions button {
+  padding: 8px 8px;
+}
+.card-actions .prescription {
+  color: var(--orange);
+  background-color: #fff;
+  font-size: 0.7rem;
+}
+.card-actions .book {
+  background: var(--orange);
+  color: white;
+  transition: background 0.3s;
+  font-size: 0.7rem;
+}
+
+.card-actions .book:hover {
+  background: #e63946;
+}
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--lightGrey);
+  margin-top: 3rem;
+}
+.footer .top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  margin-bottom: 2rem;
+}
+
+.footer h5 {
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+.footer ul li {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+.footer .emailI {
+  display: flex;
+  margin-top: 1rem;
+}
+.footer input[type="email"] {
+  padding: 10px;
+  border: 1px solid var(--lightGrey);
+  border-radius: 5px;
+  border-right: none;
+}
+
+.footer button {
+  background: #ffa502;
+  color: white;
+  border-radius: 5px;
+}
+.footer .bottom {
+  border-top: 1px solid var(--lightGrey);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .bottom .svgs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.footer .bottom .svgs .facebook {
+  color: blue;
+}
+.footer .bottom .svgs .google {
+  color: green;
+}
+.footer .bottom .svgs .apple {
+  color: #000;
+}
+.footer .bottom .svgs .instagram {
+  color: #c21975;
 }
